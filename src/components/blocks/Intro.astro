@@ -1,0 +1,46 @@
+---
+import Section from "../shared/Section.astro";
+import GradientHeader from "../headers/GradientHeader.astro";
+import Typography from "../shared/Typography.astro";
+import Link from "../shared/Link.astro";
+import EnvelopeSimple from 'phosphor-astro/EnvelopeSimpleLight.astro';
+import GithubLogo from 'phosphor-astro/GithubLogoLight.astro';
+import LinkedinLogo from 'phosphor-astro/LinkedinLogoLight.astro';
+---
+
+<Section>
+    <GradientHeader slot="header" color="rgba(0,256,256,0.1)"/>
+    <Typography as="h1" variant="title">Ruben Bimmel</Typography>
+    <ul class="link-list">
+        <li>
+            <Link to="mailto:contact@rubenbimmel.nl">
+                <EnvelopeSimple slot="icon"/>
+                contact@rubenbimmel.nl
+            </Link>
+        </li>
+        <li>
+            <Link to="https://github.com/RubenBimmel">
+                <GithubLogo slot="icon"/>
+                https://github.com/RubenBimmel
+            </Link>
+        </li>
+        <li>
+            <Link to="https://www.linkedin.com/in/rubenbimmel">
+                <LinkedinLogo slot="icon"/>
+                https://www.linkedin.com/in/rubenbimmel
+            </Link>
+        </li>
+    </ul>
+</Section>
+
+<style lang="scss">
+    .link-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      
+      li {
+        margin: 1rem 0;
+      }
+    }
+</style>

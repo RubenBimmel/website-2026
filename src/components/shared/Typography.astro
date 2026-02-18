@@ -1,0 +1,40 @@
+---
+interface Props {
+    as: 'h1' | 'h2' | 'h3' | 'p' | 'span';
+    variant: 'title' | 'heading' | 'subheading' | 'body';
+    class?: string;
+}
+
+const {as, variant, class: className} = Astro.props;
+
+const Element = as;
+---
+
+<Element class:list={[variant, className]}>
+    <slot/>
+</Element>
+
+<style>
+    .title {
+        font-family: "Playpen Sans", cursive;
+        font-optical-sizing: auto;
+        font-weight: 100;
+        font-style: normal;
+        font-size: 6rem;
+    }
+
+    .heading {
+        font-size: 2rem;
+        font-weight: normal;
+    }
+    
+    .subheading {
+        font-size: 1.25rem;
+        font-weight: bold;
+    }
+
+    .body {
+        font-size: 1.25rem;
+        font-weight: normal;
+    }
+</style>
