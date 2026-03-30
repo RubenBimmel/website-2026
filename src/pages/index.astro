@@ -1,8 +1,43 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Intro from "../components/blocks/Intro.astro";
+import Career from "../components/blocks/Career.astro";
+import About from "../components/blocks/About.astro";
+import Education from "../components/blocks/Education.astro";
+import Footer from "../components/blocks/Footer.astro";
+import FloatingMenu from "../components/shared/FloatingMenu.astro";
+import FloatingMenuItem from "../components/shared/FloatingMenuItem.astro";
+import BriefcaseIcon from 'phosphor-astro/BriefcaseLight.astro';
+import EnvelopeSimpleIcon from 'phosphor-astro/EnvelopeSimpleLight.astro';
+import GraduationCapIcon from 'phosphor-astro/GraduationCapLight.astro';
+import UserIcon from 'phosphor-astro/UserLight.astro';
 ---
 
 <Layout>
-	<Intro/>
+	<main>
+		<Intro/>
+		<About/>
+		<Career/>
+		<Education/>
+
+		<FloatingMenu>
+			<FloatingMenuItem id="intro">
+				<EnvelopeSimpleIcon slot="icon"/>
+				Contact
+			</FloatingMenuItem>
+			<FloatingMenuItem id="about">
+				<UserIcon slot="icon"/>
+				Over mij
+			</FloatingMenuItem>
+			<FloatingMenuItem id="career">
+				<BriefcaseIcon slot="icon"/>
+				Werk
+			</FloatingMenuItem>
+			<FloatingMenuItem id="education">
+				<GraduationCapIcon slot="icon"/>
+				Opleiding
+			</FloatingMenuItem>
+		</FloatingMenu>
+	</main>
+	<Footer/>
 </Layout>

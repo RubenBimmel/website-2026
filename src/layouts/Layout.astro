@@ -1,4 +1,6 @@
 ---
+import '../styles/reset.css';
+
 interface Props {
 	title?: string;
 }
@@ -35,15 +37,25 @@ const pageTitle = title ? `Ruben Bimmel | ${title}` : 'Ruben Bimmel';
 	@import url('https://fonts.googleapis.com/css2?family=Nokora:wght@100..900&family=Playpen+Sans:wght@100&display=swap');
 
 	html {
+		--max-content-width: 1080px;
 		--background: white;
 		--foreground: black;
+		--panel: rgba(0, 0, 0, 0.8);
+		--on-panel: white;
 
 		color: var(--foreground);
 		background-color: var(--background);
+		scroll-snap-type: y proximity;
 
 		@media (prefers-color-scheme: dark) {
 			--background: black;
 			--foreground: white;
+			--panel: rgba(255, 255, 255, 0.8);
+			--on-panel: black;
+		}
+
+		@media (prefers-reduced-motion: no-preference) {
+			scroll-behavior: smooth;
 		}
 	}
 

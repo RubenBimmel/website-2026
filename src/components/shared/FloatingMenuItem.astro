@@ -1,0 +1,29 @@
+---
+import Link from "./Link.astro";
+
+interface Props {
+    id: string;
+}
+
+const {id} = Astro.props;
+---
+
+<div class="floating-menu-item">
+    <Link to={`#${id}`}>
+        <slot name="icon" slot="icon"/>
+        <slot/>
+    </Link>
+</div>
+
+<style lang="scss">
+  @media only screen and (max-width: 1900px) {
+    .floating-menu-item {
+      width: 2rem;
+      overflow: visible;
+
+      :global(span) {
+        display: none;
+      }
+    }
+  }
+</style>

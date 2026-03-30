@@ -1,0 +1,59 @@
+<nav class="floating-menu">
+    <div class="floating-menu-panel">
+        <slot/>
+    </div>
+</nav>
+
+<style lang="scss">
+  .floating-menu {
+    position: fixed;
+    display: flex;
+    bottom: 0;
+    right: 0;
+
+    &-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      min-width: 16rem;
+      margin: 4rem;
+      padding: 2rem;
+      border: 1px solid var(--foreground);
+      border-radius: 2rem;
+      background-color: var(--background);
+      animation: fadeIn 1s 2s both;
+    }
+  }
+
+
+  @media only screen and (max-width: 1900px) {
+    .floating-menu-panel {
+      margin: 4rem 2rem;
+      padding: 1.5rem;
+      min-width: unset;
+    }
+  }
+
+  @media only screen and (max-width: 1400px) {
+    .floating-menu {
+      top: 0;
+      bottom: unset;
+
+      &-panel {
+        margin: 1rem;
+        flex-direction: row;
+      }
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      pointer-events: none;
+      opacity: 0;
+    }
+    to {
+      pointer-events: auto;
+      opacity: 1;
+    }
+  }
+</style>

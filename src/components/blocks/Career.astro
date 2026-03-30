@@ -1,0 +1,27 @@
+---
+import Section from "../shared/Section.astro";
+import GradientHeader from "../headers/GradientHeader.astro";
+import Typography from "../shared/Typography.astro";
+import Timeline from "../shared/Timeline.astro";
+import Link from "../shared/Link.astro";
+---
+
+<Section id="career">
+    <GradientHeader slot="header" color="rgba(0,256,256,0.1)"/>
+    <Typography as="h1" variant="title">Werk</Typography>
+    <Timeline date="2020 - 2026">
+        <Typography as="h2" variant="heading">Frontend Developer</Typography>
+        <Link to="https://www.q42.nl/">Q42</Link>
+    </Timeline>
+    <Timeline date="2018 - 2019">
+        <Typography as="h2" variant="heading">Game Development Intern</Typography>
+        <Link to="https://www.turtleblaze.com/">TurtleBlaze</Link>
+    </Timeline>
+    <Timeline date="2013 - 2018">
+        <Typography as="h2" variant="heading">Content Management & Desktoppublishing</Typography>
+        <Link to="https://weststrate.nl/">Weststrate VOF</Link>
+    </Timeline>
+</Section>
+
+<style lang="scss">
+</style>

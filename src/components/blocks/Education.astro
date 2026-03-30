@@ -1,0 +1,69 @@
+---
+import Section from "../shared/Section.astro";
+import GradientHeader from "../headers/GradientHeader.astro";
+import Typography from "../shared/Typography.astro";
+import BuildingOfficeIcon from 'phosphor-astro/BuildingOfficeLight.astro';
+import GraduationCapIcon from 'phosphor-astro/GraduationCapLight.astro';
+import MapPinIcon from 'phosphor-astro/MapPinLight.astro';
+import Timeline from "../shared/Timeline.astro";
+---
+
+<Section id="education">
+    <GradientHeader slot="header" color="rgba(0,256,256,0.1)"/>
+    <Typography as="h1" variant="title">Opleiding</Typography>
+    <Timeline date="2020">         
+        <Typography as="h2" variant="heading" class="education-list-row">HBO Bachelor Creative Media and Game Technologies</Typography>
+        <div class="education-row">
+            <GraduationCapIcon/>
+            <Typography as="p" variant="body">Game Development</Typography>
+        </div>
+        <div class="education-row">
+            <BuildingOfficeIcon/>
+            <Typography as="p" variant="body">Hogeschool voor de Kunsten Utrecht</Typography>
+        </div>
+        <div class="education-row">
+            <MapPinIcon/>
+            <Typography as="p" variant="body">Utrecht, 25 maart 2020</Typography>
+        </div>
+    </Timeline>
+    <Timeline date="2011">
+        <Typography as="h2" variant="heading">Voorbereidend wetenschappelijk onderwijs</Typography>
+        <div class="education-row">
+            <GraduationCapIcon/>
+            <Typography as="p" variant="body">Atheneum, Profiel Natuur en Techniek</Typography>
+        </div>
+        <div class="education-row">
+            <BuildingOfficeIcon/>
+            <Typography as="p" variant="body">Christelijke Scholengemeenschap Walcheren</Typography>
+        </div>
+        <div class="education-row">
+            <MapPinIcon/>
+            <Typography as="p" variant="body">Middelburg, 16 juni 2011</Typography>
+        </div>
+    </Timeline>
+</Section>
+
+<style lang="scss">
+  .education-list {
+    li {
+      margin: 3rem;
+    }
+  }
+
+  .education-row {
+    display: flex;
+    align-items: start;
+    gap: 1rem;
+    margin-top: 1rem;
+
+    svg {
+      width: 2rem;
+      height: 2rem;
+      display: inline-block;
+    }
+
+    :global(h3), :global(p) {
+      margin-top: .25rem;
+    }
+  }
+</style>

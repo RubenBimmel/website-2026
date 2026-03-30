@@ -1,7 +1,7 @@
 ---
 interface Props {
     as: 'h1' | 'h2' | 'h3' | 'p' | 'span';
-    variant: 'title' | 'heading' | 'subheading' | 'body';
+    variant: 'hero' | 'title' | 'heading' | 'subheading' | 'body';
     class?: string;
 }
 
@@ -15,22 +15,34 @@ const Element = as;
 </Element>
 
 <style>
-    .title {
+    .hero {
         font-family: "Playpen Sans", cursive;
         font-optical-sizing: auto;
         font-weight: 100;
         font-style: normal;
         font-size: 6rem;
+        margin-bottom: 4.5rem;
+    }
+    
+    .title {
+        font-family: "Playpen Sans", cursive;
+        font-optical-sizing: auto;
+        font-weight: 100;
+        font-style: normal;
+        font-size: 4.5rem;
+        margin-bottom: 4.5rem;
     }
 
     .heading {
         font-size: 2rem;
         font-weight: normal;
+        margin-bottom: 1.5rem;
     }
     
     .subheading {
-        font-size: 1.25rem;
+        font-size: 1.3rem;
         font-weight: bold;
+        margin-bottom: 1.5rem;
     }
 
     .body {

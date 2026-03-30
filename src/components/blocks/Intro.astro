@@ -8,9 +8,9 @@ import GithubLogo from 'phosphor-astro/GithubLogoLight.astro';
 import LinkedinLogo from 'phosphor-astro/LinkedinLogoLight.astro';
 ---
 
-<Section>
+<Section id="intro">
     <GradientHeader slot="header" color="rgba(0,256,256,0.1)"/>
-    <Typography as="h1" variant="title">Ruben Bimmel</Typography>
+    <Typography as="h1" variant="hero">Ruben Bimmel</Typography>
     <ul class="link-list">
         <li>
             <Link to="mailto:contact@rubenbimmel.nl">
@@ -21,13 +21,13 @@ import LinkedinLogo from 'phosphor-astro/LinkedinLogoLight.astro';
         <li>
             <Link to="https://github.com/RubenBimmel">
                 <GithubLogo slot="icon"/>
-                https://github.com/RubenBimmel
+                GitHub
             </Link>
         </li>
         <li>
             <Link to="https://www.linkedin.com/in/rubenbimmel">
                 <LinkedinLogo slot="icon"/>
-                https://www.linkedin.com/in/rubenbimmel
+                LinkedIn
             </Link>
         </li>
     </ul>
@@ -35,10 +35,6 @@ import LinkedinLogo from 'phosphor-astro/LinkedinLogoLight.astro';
 
 <style lang="scss">
     .link-list {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      
       li {
         margin: 1rem 0;
       }
