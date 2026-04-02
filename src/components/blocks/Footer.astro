@@ -14,21 +14,24 @@ const date = new Date().toLocaleDateString("nl");
     </Link>
 
     <div class="footer-row">
-        <Link to="https://github.com/RubenBimmel/website-2026">
+        <Link to="https://github.com/RubenBimmel/website-2026" variant="body-small">
             <GithubLogo slot="icon"/>
             RubenBimmel/website-2026
         </Link>
-        <Typography as="p" variant="body">Laatst bewerkt: {date}</Typography>
+        <Typography as="p" variant="body-small">Laatst bewerkt: {date}</Typography>
     </div>
 </div>
 
 <style lang="scss">
   .footer {
+    display: flex;
+    flex-direction: column;
     max-width: var(--max-content-width);
-    margin: 1rem auto 0;
+    margin: 5rem auto 2.5rem;
+    padding: 0 2rem;
+    gap: 5rem;
 
     &-row {
-      margin: 6rem 0 2.5rem;
       display: flex;
       justify-content: space-between;
       opacity: 60%;

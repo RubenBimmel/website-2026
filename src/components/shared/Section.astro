@@ -1,13 +1,15 @@
 ---
 interface Props {
     id: string;
+    color?: string;
+    headerSize?: 'medium' | 'large';
 }
 
-const {id} = Astro.props;
+const {id, color = 'var(--background)', headerSize = 'medium'} = Astro.props;
 ---
 
-<section id={id} class="section">
-    <div class="background" role="presentation">
+<section id={id} class:list={["section", `header-${headerSize}`]}>
+    <div class="foreground" role="presentation">
         <div class="header">
             <slot name="header"/>
         </div>
@@ -17,34 +19,43 @@ const {id} = Astro.props;
     </div>
 </section>
 
-<style lang="scss">
+<style lang="scss" define:vars={{color}}>
   .section {
-    --header-height: 40vh;
-
     position: relative;
     width: 100%;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     scroll-snap-align: start;
+    background-color: var(--color);
+    
+    &.header-medium {
+      --header-height: 30vh;
+    }
 
-    .background {
+    &.header-large {
+      --header-height: 60vh;
+    }
+
+    .foreground {
       position: absolute;
       inset: 0;
-      z-index: -1;
+      pointer-events: none;
+      z-index: 1;
 
       .header {
         position: sticky;
         top: 0;
         width: 100%;
         height: var(--header-height);
+        background: linear-gradient(to bottom, var(--color), transparent);
       }
     }
 
     .content {
       width: 100%;
       max-width: var(--max-content-width);
-      padding: var(--header-height) 2rem 8rem;
+      padding: var(--header-height) 2rem 12rem;
     }
   }
 </style>

@@ -38,10 +38,14 @@ const pageTitle = title ? `Ruben Bimmel | ${title}` : 'Ruben Bimmel';
 
 	html {
 		--max-content-width: 1080px;
-		--background: white;
+		--background: rgb(230, 230, 230);
 		--foreground: black;
 		--panel: rgba(0, 0, 0, 0.8);
-		--on-panel: white;
+		--on-panel: rgb(230, 230, 230);
+		
+		--color-brick: #FAE9E6;
+		--color-ocher: #FAF3D9;
+		--color-moss: #F0F6ED;
 
 		color: var(--foreground);
 		background-color: var(--background);
@@ -49,9 +53,13 @@ const pageTitle = title ? `Ruben Bimmel | ${title}` : 'Ruben Bimmel';
 
 		@media (prefers-color-scheme: dark) {
 			--background: black;
-			--foreground: white;
-			--panel: rgba(255, 255, 255, 0.8);
+			--foreground: rgb(230, 230, 230);
+			--panel: rgba(230, 230, 230, 0.8);
 			--on-panel: black;
+
+			--color-brick: #2B1815;
+			--color-ocher: #2E2412;
+			--color-moss: #182016;
 		}
 
 		@media (prefers-reduced-motion: no-preference) {

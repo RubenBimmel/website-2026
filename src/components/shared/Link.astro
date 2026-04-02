@@ -3,14 +3,15 @@ import Typography from "./Typography.astro";
 
 interface Props {
     to: string;
+    variant?: 'body' | 'body-small'
 }
 
-const {to} = Astro.props;
+const {to, variant = 'body'} = Astro.props;
 ---
 
-<a href={to} class="link">
+<a href={to} class:list={['link', variant]} target={to.startsWith('http') ? "_blank" : undefined}>
     <slot name="icon"/>
-    <Typography as="span" variant="body" class="link-text">
+    <Typography as="span" variant={variant} class="link-text">
         <slot/>
     </Typography>
 </a>
@@ -22,10 +23,17 @@ const {to} = Astro.props;
       gap: 0.75rem;
       color: currentColor;
       text-decoration: none;
+      opacity: 75%;
+      transition: opacity 0.2s linear;
 
-      :global(svg) {
+      &.body :global(svg) {
         width: 2rem;
         height: 2rem;
+      }
+      
+      &.body-small :global(svg) {
+        width: 1.25rem;
+        height: 1.25rem;
       }
 
       :global(.link-text) {
@@ -34,8 +42,12 @@ const {to} = Astro.props;
         transition: border-color 0.3s linear;
       }
       
-      &:hover :global(.link-text) {
-        border-color: currentColor;
+      &:hover {
+        opacity: 100%;
+
+        :global(.link-text) {
+          border-color: currentColor;
+        }
       }
     }
 </style>

@@ -1,6 +1,5 @@
 ---
 import Section from "../shared/Section.astro";
-import GradientHeader from "../headers/GradientHeader.astro";
 import Typography from "../shared/Typography.astro";
 import Link from "../shared/Link.astro";
 import EnvelopeSimple from 'phosphor-astro/EnvelopeSimpleLight.astro';
@@ -8,23 +7,22 @@ import GithubLogo from 'phosphor-astro/GithubLogoLight.astro';
 import LinkedinLogo from 'phosphor-astro/LinkedinLogoLight.astro';
 ---
 
-<Section id="intro">
-    <GradientHeader slot="header" color="rgba(0,256,256,0.1)"/>
-    <Typography as="h1" variant="hero">Ruben Bimmel</Typography>
+<Section id="intro" headerSize="large">
+    <Typography as="h1" variant="hero" class="appear">Ruben Bimmel</Typography>
     <ul class="link-list">
-        <li>
+        <li class="appear delay-step-1">
             <Link to="mailto:contact@rubenbimmel.nl">
                 <EnvelopeSimple slot="icon"/>
                 contact@rubenbimmel.nl
             </Link>
         </li>
-        <li>
+        <li class="appear delay-step-2">
             <Link to="https://github.com/RubenBimmel">
                 <GithubLogo slot="icon"/>
                 GitHub
             </Link>
         </li>
-        <li>
+        <li class="appear delay-step-3">
             <Link to="https://www.linkedin.com/in/rubenbimmel">
                 <LinkedinLogo slot="icon"/>
                 LinkedIn
@@ -37,6 +35,34 @@ import LinkedinLogo from 'phosphor-astro/LinkedinLogoLight.astro';
     .link-list {
       li {
         margin: 1rem 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      :global(.appear) {
+        animation: appear 1s both ease-out;
+      }
+
+      .delay-step-1 {
+        animation-delay: 200ms;
+      }
+
+      .delay-step-2 {
+        animation-delay: 400ms;
+      }
+
+      .delay-step-3 {
+        animation-delay: 600ms;
+      }
+    }
+
+    @keyframes appear {
+      from {
+        transform: translateY(1rem);
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
       }
     }
 </style>

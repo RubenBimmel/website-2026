@@ -9,20 +9,19 @@ const {date} = Astro.props;
 ---
 
 <div class="timeline-section">
-    <article class="timeline-content">
-        <slot/>
-    </article>
     <aside class="timeline">
         <Typography as="p" variant="body">{date}</Typography>
         <div class="timeline-line"></div>
     </aside>
+    <article class="timeline-content">
+        <slot/>
+    </article>
 </div>
 
 <style lang="scss">
     .timeline-section {
       display: flex;
-      flex-direction: row-reverse;
-      gap: 5rem;
+      flex-direction: column;
     }
     
     .timeline-content {
@@ -33,12 +32,19 @@ const {date} = Astro.props;
     .timeline {
       display: flex;
       flex-direction: column;
-      gap: 0.75rem;
+      gap: 1.25rem;
       padding: 0.5rem 0 1rem;
       
       &-line {
         flex-grow: 1;
         border-left: 1px var(--foreground) dashed;
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      .timeline-section {
+        flex-direction: row;
+        gap: 5rem;
       }
     }
 </style>

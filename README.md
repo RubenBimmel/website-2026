@@ -22,6 +22,6 @@ All commands are run from the root of the project, from a terminal:
 
 ## 🚀 Deploy
 
-Push to Main! 👍
+Push to main! 👍
 
 A [GitHub Actions workflow](./.github/workflows/deploy.yml) will build and deploy the app to GitHub Pages.
