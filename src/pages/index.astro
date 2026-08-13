@@ -5,8 +5,8 @@ import Career from "../components/blocks/Career.astro";
 import About from "../components/blocks/About.astro";
 import Education from "../components/blocks/Education.astro";
 import Footer from "../components/blocks/Footer.astro";
-import FloatingMenu from "../components/shared/FloatingMenu.astro";
-import FloatingMenuItem from "../components/shared/FloatingMenuItem.astro";
+import FloatingMenu from "../components/navigation/FloatingMenu.astro";
+import FloatingMenuItem from "../components/navigation/FloatingMenuItem.astro";
 import BriefcaseIcon from 'phosphor-astro/BriefcaseLight.astro';
 import EnvelopeSimpleIcon from 'phosphor-astro/EnvelopeSimpleLight.astro';
 import GraduationCapIcon from 'phosphor-astro/GraduationCapLight.astro';
@@ -41,3 +41,9 @@ import UserIcon from 'phosphor-astro/UserLight.astro';
 	</main>
 	<Footer/>
 </Layout>
+
+<style>
+	main {
+		color: var(--foreground);
+	}
+</style>

@@ -7,7 +7,11 @@ import GithubLogo from 'phosphor-astro/GithubLogoLight.astro';
 import LinkedinLogo from 'phosphor-astro/LinkedinLogoLight.astro';
 ---
 
-<Section id="intro" headerSize="large">
+<Section id="intro" color="var(--color-sky)">
+    <svg slot="header" width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <path d="M 0,0 L 0,40 C 40,40 60,20 100,20 L 100,0" fill="var(--background)"  opacity="0.5" />
+        <path d="M 0,0 L -140,80 C -80,80 -40,10 20,10 C 80,10 120,80 180,80 L 100,0" fill="var(--background)" opacity="0.5" />
+    </svg>
     <Typography as="h1" variant="hero" class="appear">Ruben Bimmel</Typography>
     <ul class="link-list">
         <li class="appear delay-step-1">
@@ -32,37 +36,37 @@ import LinkedinLogo from 'phosphor-astro/LinkedinLogoLight.astro';
 </Section>
 
 <style lang="scss">
-    .link-list {
-      li {
-        margin: 1rem 0;
-      }
+  .link-list {
+    li {
+      margin: 1rem 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    :global(.appear) {
+      animation: appear 1s both ease-out;
     }
 
-    @media (prefers-reduced-motion: no-preference) {
-      :global(.appear) {
-        animation: appear 1s both ease-out;
-      }
-
-      .delay-step-1 {
-        animation-delay: 200ms;
-      }
-
-      .delay-step-2 {
-        animation-delay: 400ms;
-      }
-
-      .delay-step-3 {
-        animation-delay: 600ms;
-      }
+    .delay-step-1 {
+      animation-delay: 200ms;
     }
 
-    @keyframes appear {
-      from {
-        transform: translateY(1rem);
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
+    .delay-step-2 {
+      animation-delay: 400ms;
     }
+
+    .delay-step-3 {
+      animation-delay: 600ms;
+    }
+  }
+
+  @keyframes appear {
+    from {
+      transform: translateY(1rem);
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 </style>

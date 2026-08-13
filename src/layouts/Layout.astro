@@ -38,29 +38,18 @@ const pageTitle = title ? `Ruben Bimmel | ${title}` : 'Ruben Bimmel';
 
 	html {
 		--max-content-width: 1080px;
-		--background: rgb(230, 230, 230);
+		--background: #F9F2E5;
 		--foreground: black;
-		--panel: rgba(0, 0, 0, 0.8);
+		--panel: #F9F2E591;
 		--on-panel: rgb(230, 230, 230);
 		
-		--color-brick: #FAE9E6;
-		--color-ocher: #FAF3D9;
-		--color-moss: #F0F6ED;
+		--color-sky: #94cae0;
+		--color-grass: #96e094;
+		--color-lake: #4440b7;
 
-		color: var(--foreground);
-		background-color: var(--background);
+		color: var(--background);
+		background-color: var(--color-lake);
 		scroll-snap-type: y proximity;
-
-		@media (prefers-color-scheme: dark) {
-			--background: black;
-			--foreground: rgb(230, 230, 230);
-			--panel: rgba(230, 230, 230, 0.8);
-			--on-panel: black;
-
-			--color-brick: #2B1815;
-			--color-ocher: #2E2412;
-			--color-moss: #182016;
-		}
 
 		@media (prefers-reduced-motion: no-preference) {
 			scroll-behavior: smooth;
